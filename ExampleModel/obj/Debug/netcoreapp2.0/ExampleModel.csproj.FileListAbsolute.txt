@@ -1,0 +1,9 @@
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\bin\Debug\netcoreapp2.0\ExampleModel.deps.json
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\bin\Debug\netcoreapp2.0\ExampleModel.dll
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\bin\Debug\netcoreapp2.0\ExampleModel.pdb
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\obj\Debug\netcoreapp2.0\ExampleModel.csprojAssemblyReference.cache
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\obj\Debug\netcoreapp2.0\ExampleModel.csproj.CoreCompileInputs.cache
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\obj\Debug\netcoreapp2.0\ExampleModel.AssemblyInfoInputs.cache
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\obj\Debug\netcoreapp2.0\ExampleModel.AssemblyInfo.cs
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\obj\Debug\netcoreapp2.0\ExampleModel.dll
+D:\工作目录\VS2017项目\ZzhFramework\ExampleModel\obj\Debug\netcoreapp2.0\ExampleModel.pdb

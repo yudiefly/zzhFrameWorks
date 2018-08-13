@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ZZH.RabbitMQ.Service</id>
+    <version>1.0.0.1</version>
+    <authors>ZZH.RabbitMQ.Service</authors>
+    <owners>ZZH.RabbitMQ.Service</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>RabbitMQ重试队列业务组件
+修正了，自动添加前缀功能</description>
+    <copyright>zzh203</copyright>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.0">
+        <dependency id="RabbitMQ.Client" version="5.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\工作目录\VS2017项目\ZzhFramework\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll" target="lib\netcoreapp2.0\ZZH.RabbitMQ.Service.dll" />
+  </files>
+</package>
