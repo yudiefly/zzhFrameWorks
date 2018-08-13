@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ExampleModel\\ExampleModel.csproj",
+      "projectUniqueName": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\ExampleModel.csproj",
       "projectName": "ExampleModel",
-      "projectPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ExampleModel\\ExampleModel.csproj",
+      "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\ExampleModel.csproj",
       "packagesPath": "C:\\Users\\zhonghai.zhu.o\\.nuget\\packages\\",
-      "outputPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ExampleModel\\obj\\",
+      "outputPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

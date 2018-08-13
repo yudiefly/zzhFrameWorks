@@ -13334,11 +13334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\工作目录\\VS2017项目\\ZzhFramework\\MQ.Test\\MQ.Test.csproj",
+      "projectUniqueName": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\MQ.Test\\MQ.Test.csproj",
       "projectName": "MQ.Test",
-      "projectPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\MQ.Test\\MQ.Test.csproj",
+      "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\MQ.Test\\MQ.Test.csproj",
       "packagesPath": "C:\\Users\\zhonghai.zhu.o\\.nuget\\packages\\",
-      "outputPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\MQ.Test\\obj\\",
+      "outputPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\MQ.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13358,11 +13358,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\工作目录\\VS2017项目\\ZzhFramework\\ExampleModel\\ExampleModel.csproj": {
-              "projectPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ExampleModel\\ExampleModel.csproj"
+            "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\ExampleModel.csproj": {
+              "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\ExampleModel.csproj"
             },
-            "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj": {
-              "projectPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj"
+            "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj": {
+              "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj"
             }
           }
         }

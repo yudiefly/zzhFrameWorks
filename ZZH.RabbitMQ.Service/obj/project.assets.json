@@ -4192,11 +4192,11 @@
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj",
+      "projectUniqueName": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj",
       "projectName": "ZZH.RabbitMQ.Service",
-      "projectPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj",
+      "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj",
       "packagesPath": "C:\\Users\\zhonghai.zhu.o\\.nuget\\packages\\",
-      "outputPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.RabbitMQ.Service\\obj\\",
+      "outputPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

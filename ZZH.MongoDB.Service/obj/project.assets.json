@@ -5234,11 +5234,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.MongoDB.Service\\ZZH.MongoDB.Service.csproj",
+      "projectUniqueName": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.MongoDB.Service\\ZZH.MongoDB.Service.csproj",
       "projectName": "ZZH.MongoDB.Service",
-      "projectPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.MongoDB.Service\\ZZH.MongoDB.Service.csproj",
+      "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.MongoDB.Service\\ZZH.MongoDB.Service.csproj",
       "packagesPath": "C:\\Users\\zhonghai.zhu.o\\.nuget\\packages\\",
-      "outputPath": "D:\\工作目录\\VS2017项目\\ZzhFramework\\ZZH.MongoDB.Service\\obj\\",
+      "outputPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.MongoDB.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
