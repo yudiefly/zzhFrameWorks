@@ -16,6 +16,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="D:\工作目录\VS2017项目\ZzhFramework\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll" target="lib\netcoreapp2.0\ZZH.RabbitMQ.Service.dll" />
+    <file src="D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll" target="lib\netcoreapp2.0\ZZH.RabbitMQ.Service.dll" />
   </files>
 </package>

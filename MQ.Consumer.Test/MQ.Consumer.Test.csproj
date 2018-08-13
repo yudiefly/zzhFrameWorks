@@ -7,11 +7,11 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="ZZH.RabbitMQ.Service" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ExampleModel\ExampleModel.csproj" />
-    <ProjectReference Include="..\ZZH.RabbitMQ.Service\ZZH.RabbitMQ.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5058,6 +5058,18 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "ZZH.RabbitMQ.Service/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "RabbitMQ.Client": "5.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/ZZH.RabbitMQ.Service.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/ZZH.RabbitMQ.Service.dll": {}
+        }
+      },
       "ExampleModel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -5066,19 +5078,6 @@
         },
         "runtime": {
           "bin/placeholder/ExampleModel.dll": {}
-        }
-      },
-      "ZZH.RabbitMQ.Service/1.0.1": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "RabbitMQ.Client": "5.1.0"
-        },
-        "compile": {
-          "bin/placeholder/ZZH.RabbitMQ.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ZZH.RabbitMQ.Service.dll": {}
         }
       }
     }
@@ -13307,15 +13306,21 @@
         "windowsazure.storage.nuspec"
       ]
     },
+    "ZZH.RabbitMQ.Service/1.0.1": {
+      "sha512": "OEg0XBTVid8IHcYWEJyPYZpvRf4Tm4ukUU2ol5jHBMYNrE1njSUFYQTWAeNPGE3pQVTHLWUf9rIaHtm/534Ksw==",
+      "type": "package",
+      "path": "zzh.rabbitmq.service/1.0.1",
+      "files": [
+        ".signature.p7s",
+        "lib/netcoreapp2.0/ZZH.RabbitMQ.Service.dll",
+        "zzh.rabbitmq.service.1.0.1.nupkg.sha512",
+        "zzh.rabbitmq.service.nuspec"
+      ]
+    },
     "ExampleModel/1.0.0": {
       "type": "project",
       "path": "../ExampleModel/ExampleModel.csproj",
       "msbuildProject": "../ExampleModel/ExampleModel.csproj"
-    },
-    "ZZH.RabbitMQ.Service/1.0.1": {
-      "type": "project",
-      "path": "../ZZH.RabbitMQ.Service/ZZH.RabbitMQ.Service.csproj",
-      "msbuildProject": "../ZZH.RabbitMQ.Service/ZZH.RabbitMQ.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13352,7 +13357,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nevftool01:8081/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13360,9 +13364,6 @@
           "projectReferences": {
             "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\ExampleModel.csproj": {
               "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ExampleModel\\ExampleModel.csproj"
-            },
-            "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj": {
-              "projectPath": "D:\\工作目录\\VS2017项目\\zzhFrameWorks\\ZZH.RabbitMQ.Service\\ZZH.RabbitMQ.Service.csproj"
             }
           }
         }
@@ -13388,6 +13389,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "ZZH.RabbitMQ.Service": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           }
         },
         "imports": [

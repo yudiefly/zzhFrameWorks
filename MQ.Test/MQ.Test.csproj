@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="ZZH.RabbitMQ.Service" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExampleModel\ExampleModel.csproj" />
-    <ProjectReference Include="..\ZZH.RabbitMQ.Service\ZZH.RabbitMQ.Service.csproj" />
   </ItemGroup>
 
 </Project>

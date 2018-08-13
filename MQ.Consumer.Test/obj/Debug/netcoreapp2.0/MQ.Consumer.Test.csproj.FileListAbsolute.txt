@@ -14,3 +14,17 @@ D:\工作目录\VS2017项目\ZzhFramework\MQ.Consumer.Test\obj\Debug\netcoreapp2
 D:\工作目录\VS2017项目\ZzhFramework\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.pdb
 D:\工作目录\VS2017项目\ZzhFramework\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll
 D:\工作目录\VS2017项目\ZzhFramework\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.pdb
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\MQ.Consumer.Test.deps.json
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\MQ.Consumer.Test.runtimeconfig.json
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\MQ.Consumer.Test.runtimeconfig.dev.json
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\MQ.Consumer.Test.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\MQ.Consumer.Test.pdb
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\ExampleModel.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\bin\Debug\netcoreapp2.0\ExampleModel.pdb
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.csprojAssemblyReference.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.csproj.CoreCompileInputs.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.AssemblyInfoInputs.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.AssemblyInfo.cs
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.csproj.CopyComplete
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\MQ.Consumer.Test\obj\Debug\netcoreapp2.0\MQ.Consumer.Test.pdb

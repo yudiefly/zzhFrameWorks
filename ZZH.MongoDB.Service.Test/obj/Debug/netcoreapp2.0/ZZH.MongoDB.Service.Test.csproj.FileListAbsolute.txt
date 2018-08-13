@@ -1,0 +1,10 @@
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\bin\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.deps.json
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\bin\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.runtimeconfig.json
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\bin\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.runtimeconfig.dev.json
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\bin\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\obj\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.csproj.CoreCompileInputs.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\obj\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.AssemblyInfoInputs.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\obj\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.AssemblyInfo.cs
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\bin\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.pdb
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\obj\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.MongoDB.Service.Test\obj\Debug\netcoreapp2.0\ZZH.MongoDB.Service.Test.pdb

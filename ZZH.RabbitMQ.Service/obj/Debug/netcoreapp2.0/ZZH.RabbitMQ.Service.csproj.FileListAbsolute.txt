@@ -6,3 +6,12 @@ D:\工作目录\VS2017项目\ZzhFramework\ZZH.RabbitMQ.Service\obj\Debug\netcore
 D:\工作目录\VS2017项目\ZzhFramework\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.pdb
 D:\工作目录\VS2017项目\ZzhFramework\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll
 D:\工作目录\VS2017项目\ZzhFramework\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.pdb
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.deps.json
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\bin\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.pdb
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.csprojAssemblyReference.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.csproj.CoreCompileInputs.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.AssemblyInfoInputs.cache
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.AssemblyInfo.cs
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.dll
+D:\工作目录\VS2017项目\zzhFrameWorks\ZZH.RabbitMQ.Service\obj\Debug\netcoreapp2.0\ZZH.RabbitMQ.Service.pdb

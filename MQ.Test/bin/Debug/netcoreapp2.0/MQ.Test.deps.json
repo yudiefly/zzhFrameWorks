@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "395508fd1deae7cb1592e443dfe8b72801949ad7"
+    "signature": "5960bbe7d826370534f433ec17d06f56b553dfa3"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,7 @@
           "Microsoft.AspNetCore.All": "2.0.9",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
-          "ZZH.RabbitMQ.Service": "1.0.0"
+          "ZZH.RabbitMQ.Service": "1.0.1"
         },
         "runtime": {
           "MQ.Test.dll": {}
@@ -4083,23 +4083,23 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "ZZH.RabbitMQ.Service/1.0.1": {
+        "dependencies": {
+          "RabbitMQ.Client": "5.1.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/ZZH.RabbitMQ.Service.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp2.0/ZZH.RabbitMQ.Service.dll": {}
+        }
+      },
       "ExampleModel/1.0.0": {
         "runtime": {
           "ExampleModel.dll": {}
         },
         "compile": {
           "ExampleModel.dll": {}
-        }
-      },
-      "ZZH.RabbitMQ.Service/1.0.0": {
-        "dependencies": {
-          "RabbitMQ.Client": "5.1.0"
-        },
-        "runtime": {
-          "ZZH.RabbitMQ.Service.dll": {}
-        },
-        "compile": {
-          "ZZH.RabbitMQ.Service.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -6421,12 +6421,14 @@
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
     },
-    "ExampleModel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
+    "ZZH.RabbitMQ.Service/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OEg0XBTVid8IHcYWEJyPYZpvRf4Tm4ukUU2ol5jHBMYNrE1njSUFYQTWAeNPGE3pQVTHLWUf9rIaHtm/534Ksw==",
+      "path": "zzh.rabbitmq.service/1.0.1",
+      "hashPath": "zzh.rabbitmq.service.1.0.1.nupkg.sha512"
     },
-    "ZZH.RabbitMQ.Service/1.0.0": {
+    "ExampleModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

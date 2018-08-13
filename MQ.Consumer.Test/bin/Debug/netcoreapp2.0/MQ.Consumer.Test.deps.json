@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "44a0a3dca0267ea3735f4d294ea5b6258858f212"
+    "signature": "d987e6b7182912b385eecfcedc142cc08ad96a1d"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,7 +10,7 @@
         "dependencies": {
           "ExampleModel": "1.0.0",
           "Newtonsoft.Json": "11.0.2",
-          "ZZH.RabbitMQ.Service": "1.0.0"
+          "ZZH.RabbitMQ.Service": "1.0.1"
         },
         "runtime": {
           "MQ.Consumer.Test.dll": {}
@@ -693,17 +693,17 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "ExampleModel/1.0.0": {
-        "runtime": {
-          "ExampleModel.dll": {}
-        }
-      },
-      "ZZH.RabbitMQ.Service/1.0.0": {
+      "ZZH.RabbitMQ.Service/1.0.1": {
         "dependencies": {
           "RabbitMQ.Client": "5.1.0"
         },
         "runtime": {
-          "ZZH.RabbitMQ.Service.dll": {}
+          "lib/netcoreapp2.0/ZZH.RabbitMQ.Service.dll": {}
+        }
+      },
+      "ExampleModel/1.0.0": {
+        "runtime": {
+          "ExampleModel.dll": {}
         }
       }
     }
@@ -1155,12 +1155,14 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
-    "ExampleModel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
+    "ZZH.RabbitMQ.Service/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OEg0XBTVid8IHcYWEJyPYZpvRf4Tm4ukUU2ol5jHBMYNrE1njSUFYQTWAeNPGE3pQVTHLWUf9rIaHtm/534Ksw==",
+      "path": "zzh.rabbitmq.service/1.0.1",
+      "hashPath": "zzh.rabbitmq.service.1.0.1.nupkg.sha512"
     },
-    "ZZH.RabbitMQ.Service/1.0.0": {
+    "ExampleModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
