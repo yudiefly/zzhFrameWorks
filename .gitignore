@@ -1,0 +1,12 @@
+/ExampleModel/bin
+/ExampleModel/obj
+/MQ.Consumer.Test/bin
+/MQ.Consumer.Test/obj
+/MQ.Test/bin
+/MQ.Test/obj
+/ZZH.MongoDB.Service/bin
+/ZZH.MongoDB.Service/obj
+/ZZH.MongoDB.Service.Test/bin
+/ZZH.MongoDB.Service.Test/obj
+/ZZH.RabbitMQ.Service/bin
+/ZZH.RabbitMQ.Service/obj
