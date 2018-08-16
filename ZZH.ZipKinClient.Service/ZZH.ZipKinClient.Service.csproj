@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>zipkin4net库的再次封装，以方便接入zipkin，进行服务调用链的监控工作</Description>
   </PropertyGroup>
 
   <ItemGroup>

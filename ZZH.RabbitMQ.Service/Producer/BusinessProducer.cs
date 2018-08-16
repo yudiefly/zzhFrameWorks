@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading.Tasks;
 using ZZH.RabbitMQ.Service.Model;
 
 namespace ZZH.RabbitMQ.Service.Producer
@@ -76,6 +77,48 @@ namespace ZZH.RabbitMQ.Service.Producer
                 }
             }
         }
-              
+        /// <summary>
+        /// 异步方式发布消息
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queue"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public async Task PublishAsync<T>(string queue,T msg)
+        {
+            IConnection Connection = null;
+            IModel Channel = null;
+            try
+            {
+                Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection();
+                Channel = Connection.CreateModel();
+                //Channel.BasicQos(0, 1, false);
+                var properties = Channel.CreateBasicProperties();
+                properties.DeliveryMode = 2;//数据持久化
+                //properties.Headers = queueArg;
+                properties.Headers = new Dictionary<string, object>();
+                //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
+                var msgBytes = Serialize(new BaseMessage<T>(msg));
+                //var msgBytes = Encoding.UTF8.GetBytes(msg);
+                Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
+            }
+            catch (Exception ex)
+            {
+                string str = ex.Message;
+            }
+            finally
+            {
+                if (Channel != null && Channel.IsOpen)
+                {
+                    Channel.Close();
+                    Channel.Dispose();
+                }
+                if (Connection != null && Connection.IsOpen)
+                {
+                    Connection.Close();
+                    Connection.Dispose();
+                }
+            }
+        }
     }
 }
