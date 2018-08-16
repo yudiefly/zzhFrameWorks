@@ -10,3 +10,5 @@
 /ZZH.MongoDB.Service.Test/obj
 /ZZH.RabbitMQ.Service/bin
 /ZZH.RabbitMQ.Service/obj
+/ZZH.HttpTools.Service/bin
+/ZZH.HttpTools.Service/obj

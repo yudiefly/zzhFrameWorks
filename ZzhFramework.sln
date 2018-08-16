@@ -17,13 +17,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExampleModel", "ExampleMode
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.MongoDB.Service.Test", "ZZH.MongoDB.Service.Test\ZZH.MongoDB.Service.Test.csproj", "{1DC4D956-71BA-440C-AAD2-939DF8588AA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.ZipKinClient.Service", "ZZH.ZipKinClient.Service\ZZH.ZipKinClient.Service.csproj", "{C50DD533-DF40-4DF7-AF94-61191E965094}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service", "ZZH.ZipKinClient.Service\ZZH.ZipKinClient.Service.csproj", "{C50DD533-DF40-4DF7-AF94-61191E965094}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ZZH.ZipKinClient.Service.Test", "ZZH.ZipKinClient.Service.Test", "{E3E38280-2DB4-4389-BA8F-D8F0F0432DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.ZipKinClient.Service.Test.One", "ZZH.ZipKinClient.Service.Test.One\ZZH.ZipKinClient.Service.Test.One.csproj", "{CFB81CA2-75C4-4F7A-8F5A-189B15C7135E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service.Test.One", "ZZH.ZipKinClient.Service.Test.One\ZZH.ZipKinClient.Service.Test.One.csproj", "{CFB81CA2-75C4-4F7A-8F5A-189B15C7135E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.ZipKinClient.Service.Test.Two", "ZZH.ZipKinClient.Service.Test.Two\ZZH.ZipKinClient.Service.Test.Two.csproj", "{72CD257F-F771-4D2E-AAE5-4CD3B9567E2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service.Test.Two", "ZZH.ZipKinClient.Service.Test.Two\ZZH.ZipKinClient.Service.Test.Two.csproj", "{72CD257F-F771-4D2E-AAE5-4CD3B9567E2D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.HttpTools.Service", "ZZH.HttpTools.Service\ZZH.HttpTools.Service.csproj", "{6E5361F2-F825-4590-8FE2-58BD886A132E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.ZipKinClient.Service.Test.Three", "ZZH.ZipKinClient.Service.Test.Three\ZZH.ZipKinClient.Service.Test.Three.csproj", "{0AC499CE-3626-4A9E-BA82-3ED5A919787D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,14 @@ Global
 		{72CD257F-F771-4D2E-AAE5-4CD3B9567E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72CD257F-F771-4D2E-AAE5-4CD3B9567E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72CD257F-F771-4D2E-AAE5-4CD3B9567E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5361F2-F825-4590-8FE2-58BD886A132E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5361F2-F825-4590-8FE2-58BD886A132E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5361F2-F825-4590-8FE2-58BD886A132E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5361F2-F825-4590-8FE2-58BD886A132E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +91,7 @@ Global
 		{E3E38280-2DB4-4389-BA8F-D8F0F0432DDE} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
 		{CFB81CA2-75C4-4F7A-8F5A-189B15C7135E} = {E3E38280-2DB4-4389-BA8F-D8F0F0432DDE}
 		{72CD257F-F771-4D2E-AAE5-4CD3B9567E2D} = {E3E38280-2DB4-4389-BA8F-D8F0F0432DDE}
+		{0AC499CE-3626-4A9E-BA82-3ED5A919787D} = {E3E38280-2DB4-4389-BA8F-D8F0F0432DDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD581FF0-5A50-4AEE-8BEE-A802C6503939}

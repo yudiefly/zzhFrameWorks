@@ -23,6 +23,7 @@ namespace ZZH.ZipKinClient.Service.Test.One
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpContextAccessorExtensions();
             services.AddMvc();
         }
 
@@ -37,14 +38,15 @@ namespace ZZH.ZipKinClient.Service.Test.One
                 app.UseDeveloperExceptionPage();
             }
 
-            MyHttpContext.ServiceProvider = provider;
 
+            app.UseStaticHttpContext();
             app.UseMvc();
 
             var lifetime = app.ApplicationServices.GetService<IApplicationLifetime>();
             lifetime.ApplicationStarted.Register(() =>
             {
-                ZipKinClientHelper.RegisterHandle(loggerFactory, "http://localhost:9411");
+                ZipKinClientHelper.Init("ZZH.ZipKinClient.Service.Test.One", "http://localhost:9411");
+                ZipKinClientHelper.RegisterHandle(loggerFactory);
             });
 
             lifetime.ApplicationStopped.Register(() => ZipKinClientHelper.UnRegisterHandle());
