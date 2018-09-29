@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.HttpTools.Service", "ZZH.HttpTools.Service\ZZH.HttpTools.Service.csproj", "{6E5361F2-F825-4590-8FE2-58BD886A132E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.ZipKinClient.Service.Test.Three", "ZZH.ZipKinClient.Service.Test.Three\ZZH.ZipKinClient.Service.Test.Three.csproj", "{0AC499CE-3626-4A9E-BA82-3ED5A919787D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service.Test.Three", "ZZH.ZipKinClient.Service.Test.Three\ZZH.ZipKinClient.Service.Test.Three.csproj", "{0AC499CE-3626-4A9E-BA82-3ED5A919787D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.RabbitMQ.FrameworkService", "ZZH.RabbitMQ.FrameworkService\ZZH.RabbitMQ.FrameworkService.csproj", "{BE267FAA-9571-4219-82E8-269A0651133C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AC499CE-3626-4A9E-BA82-3ED5A919787D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE267FAA-9571-4219-82E8-269A0651133C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE267FAA-9571-4219-82E8-269A0651133C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE267FAA-9571-4219-82E8-269A0651133C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE267FAA-9571-4219-82E8-269A0651133C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
