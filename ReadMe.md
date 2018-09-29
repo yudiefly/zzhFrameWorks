@@ -8,6 +8,9 @@ ZZH.MongoDB.Service		MongoDB数据库的业务操作
 
 ZZH.RabbitMQ.Service		可用于重试业务的消息队列组件，基于RabbitMQ的客户端来实现 
 
+ZZH.RabbitMQ.FrameworkService   可用于重试业务的消息队列组件，基于RabbitMQ的客户端来实现（用于.net Framework4.5+项目）
+
+
 -----------------------------------------------------------------------------------------
 .Test项目
 凡是含有.Test名称的项目皆为示例项目，可作为参考用，这里不再详细说明。
