@@ -15,10 +15,26 @@ namespace ZZH.MongoDB.Service
         /// 获取集合
         /// </summary>
         public IMongoCollection<TAggregate> Collection;
-
+        /// <summary>
+        /// 创建Mongo仓储对象
+        /// </summary>
+        /// <param name="dbSelectionKey">仓储键名</param>
+        /// <param name="collectionName">表名</param>
+        /// <param name="mongoConfig">MongoDB服务器配置类</param>
         public DoMongoRepostory(string dbSelectionKey, string collectionName, MongoConfig mongoConfig)
         {
             this.Collection = ShareMongoDb(dbSelectionKey, mongoConfig).GetCollection<TAggregate>(collectionName);
+        }
+        /// <summary>
+        /// 创建Mongo仓储对象
+        /// </summary>
+        /// <param name="dbSelectionKey">仓储键名</param>
+        /// <param name="dbName">数据库名</param>
+        /// <param name="collectionName">表名</param>
+        /// <param name="mongoConnectionStrings">连接字符串</param>
+        public DoMongoRepostory(string dbSelectionKey,string dbName, string collectionName, string mongoConnectionStrings)
+        {
+            this.Collection = ShareMongoDb(dbSelectionKey, mongoConnectionStrings, dbName).GetCollection<TAggregate>(collectionName);
         }
 
         private List<WriteModel<TAggregate>> writers = new List<WriteModel<TAggregate>>();//写入模型

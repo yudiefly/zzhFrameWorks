@@ -14,6 +14,8 @@ namespace ZZH.MongoDB.Service
         /// <summary>
         /// 静态构造方法，初始化链接池管理对象
         /// </summary>
+        /// <param name="dbConfigSelectionKey">连接池对象的Key</param>
+        /// <param name="_mongoConfig">MongoDB连接对象</param>
         protected IMongoDatabase ShareMongoDb(string dbConfigSelectionKey, MongoConfig _mongoConfig)
         {
             if (!dbDic.ContainsKey(dbConfigSelectionKey))
@@ -47,6 +49,30 @@ namespace ZZH.MongoDB.Service
                         }
                         var logClient = new MongoClient(logSetting);
                         IMongoDatabase db = logClient.GetDatabase(_mongoConfig.DefaultDb);
+                        dbDic.Add(dbConfigSelectionKey, db);
+                    }
+                }
+            }
+            return dbDic[dbConfigSelectionKey];
+        }
+        /// <summary>
+        /// 静态构造方法，初始化链接池管理对象
+        /// </summary>
+        /// <param name="dbConfigSelectionKey">连接池对象的Key</param>
+        /// <param name="_mongoConnectionStrings">MongoDB连接字符串</param>
+        /// <param name="_CollectionName_">集合名（数据库表名）</param>
+        /// <returns></returns>
+        protected IMongoDatabase ShareMongoDb(string dbConfigSelectionKey, string _mongoConnectionStrings, string _CollectionName_)
+        {
+            if (!dbDic.ContainsKey(dbConfigSelectionKey))
+            {
+                lock (lockObj)
+                {
+                    if (!dbDic.ContainsKey(dbConfigSelectionKey) && !string.IsNullOrEmpty(_mongoConnectionStrings))
+                    {
+
+                        var logClient = new MongoClient(_mongoConnectionStrings);
+                        IMongoDatabase db = logClient.GetDatabase(_CollectionName_);
                         dbDic.Add(dbConfigSelectionKey, db);
                     }
                 }
