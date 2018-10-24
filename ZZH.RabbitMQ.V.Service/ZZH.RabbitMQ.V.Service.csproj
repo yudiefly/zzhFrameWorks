@@ -1,10 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <!--<TargetFramework>netstandard2.0</TargetFramework>-->
+    <TargetFrameworks>net451;net46;netstandard2.0;</TargetFrameworks>
     <Description>可用于重试业务的RabbitMQ组件；
-.net stand版本；</Description>
+增加多个.net框架下的支持；</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
