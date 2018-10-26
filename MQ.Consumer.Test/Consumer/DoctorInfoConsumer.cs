@@ -48,6 +48,7 @@ namespace MQ.Consumer.Test.Consumer
                     }
                     catch (Exception ex)
                     {
+                        var messagex = ex.Message;
                         Channel.BasicAck(eventArgs.DeliveryTag, false);                      
                     }
                 };

@@ -48,6 +48,7 @@ namespace ZZH.MongoDB.Service.Test.Services
             }
             catch (Exception ex)
             {
+                var messagex = ex.Message;
                 return new Tuple<List<HelloWorldEntity>, int>(new List<HelloWorldEntity>(), 0);
             }
         }  
@@ -143,7 +144,7 @@ namespace ZZH.MongoDB.Service.Test.Services
             }
             catch (Exception ex)
             {
-
+                var messagex = ex.Message;
             }
             #endregion
         }   

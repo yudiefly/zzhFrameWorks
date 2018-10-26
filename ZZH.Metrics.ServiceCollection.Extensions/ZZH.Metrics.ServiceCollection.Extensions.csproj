@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>yudiefly</Authors>
+    <Company />
+    <Product />
+    <Description>AppMetrics的扩展，用于.net core项目；</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="App.Metrics.AspNetCore.Mvc" Version="3.0.0-alpha-0098" />
+    <PackageReference Include="App.Metrics.Extensions.DependencyInjection" Version="3.0.0-alpha-0072" />
+    <PackageReference Include="App.Metrics.Reporting.Console" Version="3.0.0-alpha-0081" />
+    <PackageReference Include="App.Metrics.Reporting.InfluxDB" Version="3.0.0-alpha-0067" />
+  </ItemGroup>
+
+</Project>
