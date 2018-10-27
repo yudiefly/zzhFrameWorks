@@ -39,7 +39,7 @@ namespace ZZH.Mailkit.Service.Test
         //[Fact]
         public async Task ShouldSendAsync()
         {
-            await mailSender.SendAsync("from_mail_address", "to_mail_address", "subject", "body", true);
+            await mailSender.SendAsync("from_mail_address", "to_mail_address", "cc_mail_address","subject", "body", true);
         }
 
         public async Task ShouldSendMailMessageAsync()

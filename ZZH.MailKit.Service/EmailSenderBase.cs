@@ -24,7 +24,7 @@ namespace ZZH.MailKit.Service
             Configuration = configuration;
         }
 
-        public virtual async Task SendAsync(string to, string subject, string body, bool isBodyHtml = true)
+        public virtual async Task SendAsync(string to, string cc, string subject, string body, bool isBodyHtml = true, string bcc = "")
         {
             await SendAsync(new MailMessage
             {
@@ -35,7 +35,7 @@ namespace ZZH.MailKit.Service
             });
         }
 
-        public virtual void Send(string to, string subject, string body, bool isBodyHtml = true)
+        public virtual void Send(string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "")
         {
             Send(new MailMessage
             {
@@ -46,12 +46,12 @@ namespace ZZH.MailKit.Service
             });
         }
 
-        public virtual async Task SendAsync(string from, string to, string subject, string body, bool isBodyHtml = true)
+        public virtual async Task SendAsync(string from, string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "")
         {
             await SendAsync(new MailMessage(from, to, subject, body) { IsBodyHtml = isBodyHtml });
         }
 
-        public virtual void Send(string from, string to, string subject, string body, bool isBodyHtml = true)
+        public virtual void Send(string from, string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "")
         {
             Send(new MailMessage(from, to, subject, body) { IsBodyHtml = isBodyHtml });
         }

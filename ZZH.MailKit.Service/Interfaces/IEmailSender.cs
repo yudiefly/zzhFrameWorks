@@ -15,22 +15,22 @@ namespace ZZH.MailKit.Service
         /// <summary>
         /// Sends an email.
         /// </summary>
-        Task SendAsync(string to, string subject, string body, bool isBodyHtml = true);
+        Task SendAsync(string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "");
 
         /// <summary>
         /// Sends an email.
         /// </summary>
-        void Send(string to, string subject, string body, bool isBodyHtml = true);
+        void Send(string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "");
 
         /// <summary>
         /// Sends an email.
         /// </summary>
-        Task SendAsync(string from, string to, string subject, string body, bool isBodyHtml = true);
+        Task SendAsync(string from, string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "");
 
         /// <summary>
         /// Sends an email.
         /// </summary>
-        void Send(string from, string to, string subject, string body, bool isBodyHtml = true);
+        void Send(string from, string to,string cc, string subject, string body, bool isBodyHtml = true, string bcc = "");
 
         /// <summary>
         /// Sends an email.
