@@ -12,6 +12,7 @@ ZZH.RabbitMQ.V.Service		可用于重试业务的消息队列组件，基于RabbitMQ的客户端来实现
 
 ZZH.RabbitMQ.FrameworkService   可用于重试业务的消息队列组件，基于RabbitMQ的客户端来实现（用于.net Framework4.5+项目）
 
+ZZH.Dapper.Service			 针对ORM组件Dapper的封装，用于操作MySQL或SqlServer数据库  
 
 -----------------------------------------------------------------------------------------
 .Test项目
