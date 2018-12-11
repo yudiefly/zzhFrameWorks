@@ -17,6 +17,18 @@ namespace ZZH.RabbitMQ.FrameworkService
         /// </summary>
         private string _tag = "ZZH_";
         /// <summary>
+        /// 连接池的大小
+        /// </summary>
+        private int _maxPoolSize_ = 30;
+        /// <summary>
+        /// 连接池的大小
+        /// </summary>
+        public int MaxPoolSize
+        {
+            get { return _maxPoolSize_; }
+            set { _maxPoolSize_ = value; }
+        }
+        /// <summary>
         /// MQ虚机
         /// </summary>
         public string VirtualHost { set; get; }

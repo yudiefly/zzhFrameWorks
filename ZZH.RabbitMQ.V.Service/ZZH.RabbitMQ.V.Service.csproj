@@ -4,9 +4,10 @@
     <!--<TargetFramework>netstandard2.0</TargetFramework>-->
     <TargetFrameworks>net451;net46;netstandard2.0;</TargetFrameworks>
     <Description>可用于重试业务的RabbitMQ组件；
-增加多个.net框架下的支持；</Description>
+增加多个.net框架下的支持；
+增加连接池，支持大并发场景（另一种写法）</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

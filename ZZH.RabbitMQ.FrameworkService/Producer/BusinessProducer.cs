@@ -122,6 +122,48 @@ namespace ZZH.RabbitMQ.FrameworkService.Producer
                 }
             }
         }
+        /// <summary>
+        /// Publish basic on Connections Pool 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queue"></param>
+        /// <param name="msg"></param>
+        public void PublishInConnectionPool<T>(string queue, T msg)
+        {
+            #region 发布消息
+            var connectionFactory = RabbitMQHelper.CreateConnectFactory(constants);
+            IModelWrapper iModel = ConnectionPool.GetOrCreateChannel(connectionFactory);
+            connectionFactory.RequestedChannelMax = (ushort)constants.MaxPoolSize;
 
+            IBasicProperties props = iModel.Model.CreateBasicProperties();
+            props.DeliveryMode = 2;
+            props.Headers = new Dictionary<string, object>();
+            var msgBytes = Serialize(new BaseMessage<T>(msg));
+            iModel.Model.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, props, msgBytes);
+            iModel.SetNotBusy();
+            #endregion
+        }
+        /// <summary>
+        /// 异步发布消息（通过连接池来实现）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queue"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public async Task PublishInConnectionPoolAsync<T>(string queue, T msg)
+        {
+            #region 异步发布消息（通过连接池）
+            var connectionFactory = RabbitMQHelper.CreateConnectFactory(constants);
+            IModelWrapper iModel = ConnectionPool.GetOrCreateChannel(connectionFactory);
+            connectionFactory.RequestedChannelMax = (ushort)constants.MaxPoolSize;
+
+            IBasicProperties props = iModel.Model.CreateBasicProperties();
+            props.DeliveryMode = 2;
+            props.Headers = new Dictionary<string, object>();
+            var msgBytes = Serialize(new BaseMessage<T>(msg));
+            iModel.Model.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, props, msgBytes);
+            iModel.SetNotBusy();
+            #endregion
+        }
     }
 }

@@ -6,11 +6,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>增加异步发布消息方法;
 增加多个.net框架下的支持；
-增加连接池管理，以应对大并发场景</Description>
+增加连接池管理，以应对大并发场景（另一种写法）</Description>
     <Copyright>zzh203</Copyright>
     <AssemblyVersion>1.2.0.0</AssemblyVersion>
     <FileVersion>1.2.0.0</FileVersion>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <PackageReleaseNotes>增加多个.net框架下的支持；
 增加多个.net框架下的支持；
 增加连接池管理，以应对大并发场景</PackageReleaseNotes>
