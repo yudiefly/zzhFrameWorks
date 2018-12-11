@@ -43,38 +43,27 @@ namespace ZZH.RabbitMQ.Service.Producer
         /// <param name="type"></param>
         public void Publish<T>(string queue, T msg)
         {
-            IConnection Connection = null;
-            IModel Channel = null;
             try
             {
-                Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection();
-                Channel = Connection.CreateModel();
-                //Channel.BasicQos(0, 1, false);
-                var properties = Channel.CreateBasicProperties();
-                properties.DeliveryMode = 2;//数据持久化
-                //properties.Headers = queueArg;
-                properties.Headers = new Dictionary<string, object>();
-                //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
-                var msgBytes = Serialize(new BaseMessage<T>(msg));
-                //var msgBytes = Encoding.UTF8.GetBytes(msg);
-                Channel.BasicPublish(constants.BUSINESS_EXCHANGE,constants.TAG+queue, properties, msgBytes);
+                using (var Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection())
+                {
+                    using (var Channel = Connection.CreateModel())
+                    {
+                        //Channel.BasicQos(0, 1, false);
+                        var properties = Channel.CreateBasicProperties();
+                        properties.DeliveryMode = 2;//数据持久化
+                                                    //properties.Headers = queueArg;
+                        properties.Headers = new Dictionary<string, object>();
+                        //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
+                        var msgBytes = Serialize(new BaseMessage<T>(msg));
+                        //var msgBytes = Encoding.UTF8.GetBytes(msg);
+                        Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 string str = ex.Message;
-            }
-            finally
-            {
-                if (Channel != null && Channel.IsOpen)
-                {
-                    Channel.Close();
-                    Channel.Dispose();
-                }
-                if (Connection != null && Connection.IsOpen)
-                {
-                    Connection.Close();
-                    Connection.Dispose();
-                }
             }
         }
         /// <summary>
@@ -84,41 +73,87 @@ namespace ZZH.RabbitMQ.Service.Producer
         /// <param name="queue"></param>
         /// <param name="msg"></param>
         /// <returns></returns>
-        public async Task PublishAsync<T>(string queue,T msg)
+        public async Task PublishAsync<T>(string queue, T msg)
         {
-            IConnection Connection = null;
-            IModel Channel = null;
+            #region 异步方式发布消息
             try
             {
-                Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection();
-                Channel = Connection.CreateModel();
-                //Channel.BasicQos(0, 1, false);
-                var properties = Channel.CreateBasicProperties();
-                properties.DeliveryMode = 2;//数据持久化
-                //properties.Headers = queueArg;
-                properties.Headers = new Dictionary<string, object>();
-                //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
-                var msgBytes = Serialize(new BaseMessage<T>(msg));
-                //var msgBytes = Encoding.UTF8.GetBytes(msg);
-                Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
+                using (var Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection())
+                {
+                    using (var Channel = Connection.CreateModel())
+                    {
+                        //Channel.BasicQos(0, 1, false);
+                        var properties = Channel.CreateBasicProperties();
+                        properties.DeliveryMode = 2;//数据持久化
+                                                    //properties.Headers = queueArg;
+                        properties.Headers = new Dictionary<string, object>();
+                        //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
+                        var msgBytes = Serialize(new BaseMessage<T>(msg));
+                        //var msgBytes = Encoding.UTF8.GetBytes(msg);
+                        Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
+                    }
+                }
             }
             catch (Exception ex)
             {
                 string str = ex.Message;
             }
-            finally
+            #endregion            
+        }
+        /// <summary>
+        /// Publish basic on Connections Pool 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queue"></param>
+        /// <param name="msg"></param>
+        public void PublishInConnectionPool<T>(string queue, T msg)
+        {
+            #region 发布消息
+            try
             {
-                if (Channel != null && Channel.IsOpen)
+                IConnection Connection = RabbitMQHelper.CreateMQConnectionInPoolNew(constants);
+                using (IModel Channel = Connection.CreateModel())
                 {
-                    Channel.Close();
-                    Channel.Dispose();
-                }
-                if (Connection != null && Connection.IsOpen)
-                {
-                    Connection.Close();
-                    Connection.Dispose();
+                    var properties = Channel.CreateBasicProperties();
+                    properties.DeliveryMode = 2;//数据持久化
+                    properties.Headers = new Dictionary<string, object>();
+                    var msgBytes = Serialize(new BaseMessage<T>(msg));
+                    Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
                 }
             }
+            catch (Exception ex)
+            {
+                string str = ex.Message;
+            }
+            #endregion
+        }
+        /// <summary>
+        /// 异步发布消息（通过连接池来实现）
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queue"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
+        public async Task PublishInConnectionPoolAsync<T>(string queue, T msg)
+        {
+            #region 异步发布消息（通过连接池）
+            try
+            {
+                IConnection Connection = RabbitMQHelper.CreateMQConnectionInPoolNew(constants);
+                using (IModel Channel = Connection.CreateModel())
+                {
+                    var properties = Channel.CreateBasicProperties();
+                    properties.DeliveryMode = 2;//数据持久化
+                    properties.Headers = new Dictionary<string, object>();
+                    var msgBytes = Serialize(new BaseMessage<T>(msg));
+                    Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                string str = ex.Message;
+            }
+            #endregion
         }
     }
 }

@@ -5,12 +5,15 @@
     <TargetFrameworks>net451;net46;netstandard2.0;</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>增加异步发布消息方法;
-增加多个.net框架下的支持；</Description>
+增加多个.net框架下的支持；
+增加连接池管理，以应对大并发场景</Description>
     <Copyright>zzh203</Copyright>
-    <AssemblyVersion>1.0.1.2</AssemblyVersion>
-    <FileVersion>1.0.1.2</FileVersion>
-    <Version>1.1.2</Version>
-    <PackageReleaseNotes>增加多个.net框架下的支持；</PackageReleaseNotes>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <Version>1.2.0</Version>
+    <PackageReleaseNotes>增加多个.net框架下的支持；
+增加多个.net框架下的支持；
+增加连接池管理，以应对大并发场景</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
