@@ -53,6 +53,7 @@
     <Compile Include="Pools\ConnectionWrapper.cs" />
     <Compile Include="Pools\IModelWrapper.cs" />
     <Compile Include="Pools\TimeHelper.cs" />
+    <Compile Include="RabbitmqClientPoolHelper.cs" />
     <Compile Include="RabbitMQDeclarer.cs" />
     <Compile Include="Consumer\BaseConsumer.cs" />
     <Compile Include="Consumer\IConsumer.cs" />

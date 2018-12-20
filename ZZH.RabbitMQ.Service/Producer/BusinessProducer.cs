@@ -43,27 +43,38 @@ namespace ZZH.RabbitMQ.Service.Producer
         /// <param name="type"></param>
         public void Publish<T>(string queue, T msg)
         {
+            IConnection Connection = null;
+            IModel Channel = null;
             try
             {
-                using (var Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection())
-                {
-                    using (var Channel = Connection.CreateModel())
-                    {
-                        //Channel.BasicQos(0, 1, false);
-                        var properties = Channel.CreateBasicProperties();
-                        properties.DeliveryMode = 2;//数据持久化
-                                                    //properties.Headers = queueArg;
-                        properties.Headers = new Dictionary<string, object>();
-                        //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
-                        var msgBytes = Serialize(new BaseMessage<T>(msg));
-                        //var msgBytes = Encoding.UTF8.GetBytes(msg);
-                        Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
-                    }
-                }
+                Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection();
+                Channel = Connection.CreateModel();
+                //Channel.BasicQos(0, 1, false);
+                var properties = Channel.CreateBasicProperties();
+                properties.DeliveryMode = 2;//数据持久化
+                //properties.Headers = queueArg;
+                properties.Headers = new Dictionary<string, object>();
+                //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
+                var msgBytes = Serialize(new BaseMessage<T>(msg));
+                //var msgBytes = Encoding.UTF8.GetBytes(msg);
+                Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
             }
             catch (Exception ex)
             {
                 string str = ex.Message;
+            }
+            finally
+            {
+                if (Channel != null && Channel.IsOpen)
+                {
+                    Channel.Close();
+                    Channel.Dispose();
+                }
+                if (Connection != null && Connection.IsOpen)
+                {
+                    Connection.Close();
+                    Connection.Dispose();
+                }
             }
         }
         /// <summary>
@@ -76,27 +87,38 @@ namespace ZZH.RabbitMQ.Service.Producer
         public async Task PublishAsync<T>(string queue, T msg)
         {
             #region 异步方式发布消息
+            IConnection Connection = null;
+            IModel Channel = null;
             try
             {
-                using (var Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection())
-                {
-                    using (var Channel = Connection.CreateModel())
-                    {
-                        //Channel.BasicQos(0, 1, false);
-                        var properties = Channel.CreateBasicProperties();
-                        properties.DeliveryMode = 2;//数据持久化
-                                                    //properties.Headers = queueArg;
-                        properties.Headers = new Dictionary<string, object>();
-                        //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
-                        var msgBytes = Serialize(new BaseMessage<T>(msg));
-                        //var msgBytes = Encoding.UTF8.GetBytes(msg);
-                        Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
-                    }
-                }
+                Connection = RabbitMQHelper.CreateConnectFactory(constants).CreateConnection();
+                Channel = Connection.CreateModel();
+                //Channel.BasicQos(0, 1, false);
+                var properties = Channel.CreateBasicProperties();
+                properties.DeliveryMode = 2;//数据持久化
+                //properties.Headers = queueArg;
+                properties.Headers = new Dictionary<string, object>();
+                //var msgBytes = Serialize(new BaseMessage<T>(msg, 0));
+                var msgBytes = Serialize(new BaseMessage<T>(msg));
+                //var msgBytes = Encoding.UTF8.GetBytes(msg);
+                Channel.BasicPublish(constants.BUSINESS_EXCHANGE, constants.TAG + queue, properties, msgBytes);
             }
             catch (Exception ex)
             {
                 string str = ex.Message;
+            }
+            finally
+            {
+                if (Channel != null && Channel.IsOpen)
+                {
+                    Channel.Close();
+                    Channel.Dispose();
+                }
+                if (Connection != null && Connection.IsOpen)
+                {
+                    Connection.Close();
+                    Connection.Dispose();
+                }
             }
             #endregion            
         }
