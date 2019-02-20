@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ZZH.Metrics.ServiceCollection.Extensions\ZZH.Metrics.ServiceCollection.Extensions.csproj" />
+    <ProjectReference Include="..\..\ZZH.Metrics.ServiceCollection.Extensions\ZZH.Metrics.ServiceCollection.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

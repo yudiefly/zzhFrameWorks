@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ZZH.ZipKinClient.Service\ZZH.ZipKinClient.Service.csproj" />
     <ProjectReference Include="..\ExampleModel\ExampleModel.csproj" />
-    <ProjectReference Include="..\ZZH.ZipKinClient.Service\ZZH.ZipKinClient.Service.csproj" />
   </ItemGroup>
 
 </Project>
