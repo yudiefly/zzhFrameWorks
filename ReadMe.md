@@ -18,6 +18,8 @@ ZZH.AutoMapper.Service       基于AutoMapper的增强扩展组件（支持.ner core 平台）
 
 ZZH.DapperExpression.Service 基于Dapper组件的增强扩展（支持.net core平台）
 
+ZZH.MongoDB.StandardService  基于MongoDB.Driver封装的MongoDBhelper，提供简便的增删改查（含分页查找）等功能；
+
 -----------------------------------------------------------------------------------------
 
 在Samples目录下的.Test项目
