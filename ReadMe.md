@@ -16,6 +16,8 @@ ZZH.Dapper.Service			 针对ORM组件Dapper的封装，用于操作MySQL或SqlServer数据库
 
 ZZH.AutoMapper.Service       基于AutoMapper的增强扩展组件（支持.ner core 平台） 
 
+ZZH.DapperExpression.Service 基于Dapper组件的增强扩展（支持.net core平台）
+
 -----------------------------------------------------------------------------------------
 
 在Samples目录下的.Test项目
