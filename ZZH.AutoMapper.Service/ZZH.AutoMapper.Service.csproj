@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>yudiefly</Authors>
+    <Description>基于AutoMap的增强扩展组件，支持.net core 平台</Description>
+    <PackageReleaseNotes>基于AutoMap的增强扩展组件，支持.net core 平台</PackageReleaseNotes>
+    <PackageLicenseUrl>Apache</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/yudiefly/zzhFrameWorks</PackageProjectUrl>
+    <PackageTags>AutoMapper</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
