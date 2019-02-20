@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>yudiefly</Authors>
+    <Description>基于MongoDB.Driver封装的服务工具包，提供基础的增删改查的功能，也就是个MongoDbHelper，可以用于.net core平台，已经通过压力测试，诸位道友可以放心使用。</Description>
+    <PackageReleaseNotes>基于MongoDB.Driver封装的服务工具包，提供基础的增删改查的功能，也就是个MongoDbHelper，可以用于.net core平台，已经通过压力测试，诸位道友可以放心使用。</PackageReleaseNotes>
+    <Copyright>Apache</Copyright>
+    <PackageLicenseUrl>Apache</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/yudiefly/zzhFrameWorks</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.3" />
+  </ItemGroup>
+
+</Project>

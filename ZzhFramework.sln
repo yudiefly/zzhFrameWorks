@@ -43,13 +43,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.ZipKinClient.Service.Test.Two", "Samples\ZZH.ZipKinClient.Service.Test.Two\ZZH.ZipKinClient.Service.Test.Two.csproj", "{1A86A538-666C-43B0-B71C-5D45399DDA50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.AutoMapper.Service", "ZZH.AutoMapper.Service\ZZH.AutoMapper.Service.csproj", "{50500066-004B-48D1-9482-70FD4DD34BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.AutoMapper.Service", "ZZH.AutoMapper.Service\ZZH.AutoMapper.Service.csproj", "{50500066-004B-48D1-9482-70FD4DD34BA1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.AutoMapper.Service.Test", "Samples\ZZH.AutoMapper.Service.Test\ZZH.AutoMapper.Service.Test.csproj", "{5D2DF4CA-7685-48A9-B11F-A9A315FE72A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.DapperExpression.Service", "ZZH.DapperExpression.Service\ZZH.DapperExpression.Service.csproj", "{7B20E080-09C3-4DA7-A729-F7E097061F56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.DapperExpression.Service", "ZZH.DapperExpression.Service\ZZH.DapperExpression.Service.csproj", "{7B20E080-09C3-4DA7-A729-F7E097061F56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.DapperExpression.Service.Test", "Samples\ZZH.DapperExpression.Service.Test\ZZH.DapperExpression.Service.Test.csproj", "{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.DapperExpression.Service.Test", "Samples\ZZH.DapperExpression.Service.Test\ZZH.DapperExpression.Service.Test.csproj", "{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.MongoDB.StandardService", "ZZH.MongoDB.StandardService\ZZH.MongoDB.StandardService.csproj", "{6C357F42-0B77-45D3-A50E-CCC61673B391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +147,10 @@ Global
 		{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
