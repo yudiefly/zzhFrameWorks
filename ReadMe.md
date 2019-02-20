@@ -14,6 +14,7 @@ ZZH.RabbitMQ.FrameworkService   可用于重试业务的消息队列组件，基于RabbitMQ的客户
 
 ZZH.Dapper.Service			 针对ORM组件Dapper的封装，用于操作MySQL或SqlServer数据库  
 
+ZZH.AutoMapper.Service       基于AutoMapper的增强扩展组件（支持.ner core 平台）
 -----------------------------------------------------------------------------------------
 在Samples目录下的.Test项目
 凡是含有.Test名称的项目皆为示例项目，可作为参考用，这里不再详细说明。
