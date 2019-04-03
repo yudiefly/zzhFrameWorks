@@ -51,7 +51,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.DapperExpression.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.DapperExpression.Service.Test", "Samples\ZZH.DapperExpression.Service.Test\ZZH.DapperExpression.Service.Test.csproj", "{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.MongoDB.StandardService", "ZZH.MongoDB.StandardService\ZZH.MongoDB.StandardService.csproj", "{6C357F42-0B77-45D3-A50E-CCC61673B391}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.MongoDB.StandardService", "ZZH.MongoDB.StandardService\ZZH.MongoDB.StandardService.csproj", "{6C357F42-0B77-45D3-A50E-CCC61673B391}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.Configuration.Yaml", "ZZH.Configuration.Yaml\ZZH.Configuration.Yaml.csproj", "{E0DA9BE6-4C25-4691-9358-B7B1D3BAE87A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.Configuration.Yaml.Test", "Samples\ZZH.Configuration.Yaml.Test\ZZH.Configuration.Yaml.Test.csproj", "{3B8885F4-5C46-4848-B583-F6359904AFDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,6 +155,14 @@ Global
 		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C357F42-0B77-45D3-A50E-CCC61673B391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0DA9BE6-4C25-4691-9358-B7B1D3BAE87A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0DA9BE6-4C25-4691-9358-B7B1D3BAE87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0DA9BE6-4C25-4691-9358-B7B1D3BAE87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0DA9BE6-4C25-4691-9358-B7B1D3BAE87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -168,6 +180,7 @@ Global
 		{1A86A538-666C-43B0-B71C-5D45399DDA50} = {E3E38280-2DB4-4389-BA8F-D8F0F0432DDE}
 		{5D2DF4CA-7685-48A9-B11F-A9A315FE72A5} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
 		{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
+		{3B8885F4-5C46-4848-B583-F6359904AFDA} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD581FF0-5A50-4AEE-8BEE-A802C6503939}

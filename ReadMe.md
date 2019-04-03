@@ -16,6 +16,8 @@ ZZH.Dapper.Service			 针对ORM组件Dapper的封装，用于操作MySQL或SqlServer数据库
 
 ZZH.AutoMapper.Service       基于AutoMapper的增强扩展组件（支持.ner core 平台） 
 
+ZZH.Configuration.Yaml		 提供一个Provider，让.net core 可以解析Yaml配置文件；
+
 ZZH.DapperExpression.Service 基于Dapper组件的增强扩展（支持.net core平台）
 
 ZZH.MongoDB.StandardService  基于MongoDB.Driver封装的MongoDBhelper，提供简便的增删改查（含分页查找）等功能；
