@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using ZZH.ZipKinClient.Service.DependencyInjection;
 
 namespace ZZH.ZipKinClient.Service.Test.One
 {
@@ -42,14 +43,16 @@ namespace ZZH.ZipKinClient.Service.Test.One
             app.UseStaticHttpContext();
             app.UseMvc();
 
-            var lifetime = app.ApplicationServices.GetService<IApplicationLifetime>();
-            lifetime.ApplicationStarted.Register(() =>
-            {
-                ZipKinClientHelper.Init("ZZH.ZipKinClient.Service.Test.One", "http://localhost:9411");
-                ZipKinClientHelper.RegisterHandle(loggerFactory);
-            });
+            //var lifetime = app.ApplicationServices.GetService<IApplicationLifetime>();
+            //lifetime.ApplicationStarted.Register(() =>
+            //{
+            //    ZipKinClientHelper.Init("ZZH.ZipKinClient.Service.Test.One", "http://localhost:9411");
+            //    ZipKinClientHelper.RegisterHandle(loggerFactory);
+            //});
 
-            lifetime.ApplicationStopped.Register(() => ZipKinClientHelper.UnRegisterHandle());
+            //lifetime.ApplicationStopped.Register(() => ZipKinClientHelper.UnRegisterHandle());
+
+            app.AddZipKin(loggerFactory,"ZZH.ZipKinClient.Service.Test.One", "http://localhost:9411");
         }
     }
 }
