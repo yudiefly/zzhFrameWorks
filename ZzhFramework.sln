@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.MongoDB.Service", "ZZH.MongoDB.Service\ZZH.MongoDB.Service.csproj", "{B5DEBAF9-0268-4105-857D-E98DE73A481A}"
 EndProject
@@ -56,6 +56,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.Configuration.Yaml", "ZZH.Configuration.Yaml\ZZH.Configuration.Yaml.csproj", "{E0DA9BE6-4C25-4691-9358-B7B1D3BAE87A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.Configuration.Yaml.Test", "Samples\ZZH.Configuration.Yaml.Test\ZZH.Configuration.Yaml.Test.csproj", "{3B8885F4-5C46-4848-B583-F6359904AFDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.NLog.Kafka", "ZZH.NLog.Kafka\ZZH.NLog.Kafka.csproj", "{FD2F1C4F-5083-403E-A16B-5225B984D7CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -163,6 +165,10 @@ Global
 		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B8885F4-5C46-4848-B583-F6359904AFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD2F1C4F-5083-403E-A16B-5225B984D7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2F1C4F-5083-403E-A16B-5225B984D7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD2F1C4F-5083-403E-A16B-5225B984D7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2F1C4F-5083-403E-A16B-5225B984D7CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

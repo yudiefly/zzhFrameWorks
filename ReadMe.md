@@ -22,6 +22,8 @@ ZZH.DapperExpression.Service 基于Dapper组件的增强扩展（支持.net core平台）
 
 ZZH.MongoDB.StandardService  基于MongoDB.Driver封装的MongoDBhelper，提供简便的增删改查（含分页查找）等功能；
 
+ZZH.NLog.Kafka				 NLog组件的KafkaTarget扩展包，将日志通过Kafka+LogStash写入到ES中。（特别感谢：Franky.yang兄弟！）
+
 -----------------------------------------------------------------------------------------
 
 在Samples目录下的.Test项目
