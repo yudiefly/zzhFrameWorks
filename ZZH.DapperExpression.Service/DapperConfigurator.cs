@@ -11,6 +11,7 @@ namespace ZZH.DapperExpression.Service
     /// </summary>
     public static class DapperConfigurator
     {
+        #region SqlServer
         public static void ConfigureSqlServer()
         {
             ConfigureSqlServer(AssemblyUtil.GetAssemblies());
@@ -31,7 +32,9 @@ namespace ZZH.DapperExpression.Service
         {
             DapperExtensions.DapperExtensions.Configure(defaultMapper, assemblies, new DapperExtensions.Sql.SqlServerDialect());
         }
+        #endregion
 
+        #region MySql
         public static void ConfigureMySql()
         {
             ConfigureMySql(AssemblyUtil.GetAssemblies());
@@ -52,5 +55,29 @@ namespace ZZH.DapperExpression.Service
         {
             DapperExtensions.DapperExtensions.Configure(defaultMapper, assemblies, new DapperExtensions.Sql.MySqlDialect());
         }
+        #endregion
+
+        #region PostgreSql
+        public static void ConfigurePostgreSql()
+        {
+            ConfigurePostgreSql(AssemblyUtil.GetAssemblies());  
+        }
+
+        public static void ConfigurePostgreSql(Type mappingTypeInAssembly)
+        {
+            var assemblies = new List<Assembly> { mappingTypeInAssembly.Assembly };
+            ConfigurePostgreSql(assemblies);
+        }
+
+        public static void ConfigurePostgreSql(IList<Assembly> assemblies)
+        {
+            ConfigurePostgreSql(typeof(EntityTypeConfigMapper<>), assemblies);
+        }
+
+        public static void ConfigurePostgreSql(Type defaultMapper,IList<Assembly> assemblies)
+        {
+            DapperExtensions.DapperExtensions.Configure(defaultMapper, assemblies, new DapperExtensions.Sql.PostgreSqlDialect());
+        }
+        #endregion
     }
 }
