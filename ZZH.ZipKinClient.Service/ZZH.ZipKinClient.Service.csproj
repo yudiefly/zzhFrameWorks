@@ -2,8 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>   
     <Description>zipkin4net库的再次封装，以方便接入zipkin，进行服务调用链的监控工作</Description>
+    <PackageProjectUrl>https://github.com/yudiefly/zzhFrameWorks</PackageProjectUrl>
+    <PackageReleaseNotes>让你的应用接入调用链监控系统（APM）；</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
