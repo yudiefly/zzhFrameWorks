@@ -4,12 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>yudiefly</Authors>
-    <Description>Dapper组件的增强扩展，支持类似于EF的功能；</Description>
+    <Description>Dapper组件的增强扩展，支持类似于EF的功能；(支持MySql、SqlServer和PostgreSql--1.0.2版本有bug,1.0.3版已fixed，请放心使用）</Description>
     <Copyright>Apache</Copyright>
     <PackageLicenseUrl>Apache</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/yudiefly/zzhFrameWorks</PackageProjectUrl>
-    <PackageReleaseNotes>Dapper组件的增强扩展，支持类似于EF的功能；</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Dapper组件的增强扩展，支持类似于EF的功能；(支持MySql、SqlServer和PostgreSql）</PackageReleaseNotes>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

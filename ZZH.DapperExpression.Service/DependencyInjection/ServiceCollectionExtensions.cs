@@ -185,5 +185,80 @@ namespace ZZH.DapperExpression.Service.DependencyInjection
         }
 
         #endregion
+
+        #region PostgreSql
+        /// <summary>
+        /// 注册基于 Dapper 的 PostgreSql 服务
+        /// </summary>
+        /// <typeparam name="TDbContext">DB 上下文对象</typeparam>
+        /// <param name="services"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddDapperPostgreSql<TDbContext>(this IServiceCollection services)
+           where TDbContext : ActiveDbContext
+        {
+            DapperConfigurator.ConfigurePostgreSql();
+            services.AddScoped<TDbContext>();
+
+            return services;
+        }
+
+        /// <summary>
+        /// 注册基于 Dapper 的 PostgreSql 服务
+        /// </summary>
+        /// <typeparam name="TDbContext">DB 上下文对象</typeparam>
+        /// <param name="services"></param>
+        /// <param name="connectionName">连接字符串名称, 从 appsettings 的 ConnectionStrings 节点中读取</param>
+        /// <returns></returns>
+        public static IServiceCollection AddDapperPostgreSql<TDbContext>(this IServiceCollection services, string connectionName)
+           where TDbContext : ActiveDbContext, new()
+        {
+            if (connectionName == null)
+            {
+                throw new ArgumentNullException(nameof(connectionName));
+            }
+
+            DapperConfigurator.ConfigurePostgreSql();
+            services.AddScoped(sp =>
+            {
+                var configuration = sp.GetRequiredService<IConfiguration>();
+                var connectionString = configuration.GetConnectionString(connectionName);
+                return new TDbContext
+                {
+                    ConnectionString = connectionString
+                };
+            });
+
+            return services;
+        }
+
+        /// <summary>
+        /// 注册基于 Dapper 的 PostgreSql 服务
+        /// </summary>
+        /// <typeparam name="TDbContext">DB 上下文对象</typeparam>
+        /// <param name="services"></param>
+        /// <param name="actionOptions">DB 配置参数</param>
+        /// <returns></returns>
+        public static IServiceCollection AddDapperPostgreSql<TDbContext>(this IServiceCollection services, Action<IServiceProvider, ConnectionOptions> actionOptions)
+            where TDbContext : ActiveDbContext, new()
+        {
+            if (actionOptions == null)
+            {
+                throw new ArgumentNullException(nameof(actionOptions));
+            }
+
+            DapperConfigurator.ConfigurePostgreSql();
+            services.AddScoped(sp =>
+            {
+                var options = new ConnectionOptions();
+                actionOptions(sp, options);
+                return new TDbContext
+                {
+                    ConnectionString = options.ConnectionString
+                };
+            });
+
+            return services;
+        }
+        #endregion
     }
 }
