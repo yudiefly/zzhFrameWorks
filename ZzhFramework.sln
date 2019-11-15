@@ -59,7 +59,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.Configuration.Yaml.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.NLog.Kafka", "ZZH.NLog.Kafka\ZZH.NLog.Kafka.csproj", "{FD2F1C4F-5083-403E-A16B-5225B984D7CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.Bumblebee.GateWay", "Samples\ZZH.Bumblebee.GateWay\ZZH.Bumblebee.GateWay.csproj", "{6012FD6B-1892-41E0-8F3D-1FEC3C3255F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.Bumblebee.GateWay", "Samples\ZZH.Bumblebee.GateWay\ZZH.Bumblebee.GateWay.csproj", "{6012FD6B-1892-41E0-8F3D-1FEC3C3255F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.Kafka.Service", "ZZH.Kafka.Service\ZZH.Kafka.Service.csproj", "{91A53E84-2051-410E-9E43-501F665A09CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZZH.Kafka.Service.Test", "Samples\ZZH.Kafka.Service.Test\ZZH.Kafka.Service.Test.csproj", "{55A56BA5-941D-47D7-BA9D-9895B6F92F53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -175,6 +179,14 @@ Global
 		{6012FD6B-1892-41E0-8F3D-1FEC3C3255F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6012FD6B-1892-41E0-8F3D-1FEC3C3255F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6012FD6B-1892-41E0-8F3D-1FEC3C3255F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A53E84-2051-410E-9E43-501F665A09CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A53E84-2051-410E-9E43-501F665A09CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A53E84-2051-410E-9E43-501F665A09CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A53E84-2051-410E-9E43-501F665A09CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A56BA5-941D-47D7-BA9D-9895B6F92F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A56BA5-941D-47D7-BA9D-9895B6F92F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A56BA5-941D-47D7-BA9D-9895B6F92F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A56BA5-941D-47D7-BA9D-9895B6F92F53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -194,6 +206,7 @@ Global
 		{2F0A7FE5-6F13-41DC-B12E-7239A2CF5DAE} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
 		{3B8885F4-5C46-4848-B583-F6359904AFDA} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
 		{6012FD6B-1892-41E0-8F3D-1FEC3C3255F2} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
+		{55A56BA5-941D-47D7-BA9D-9895B6F92F53} = {1645171F-F7AB-4DC5-8D94-2BA075A22083}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD581FF0-5A50-4AEE-8BEE-A802C6503939}

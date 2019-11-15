@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <Description>Kafka客户端，包含生产者和消费者；（依赖于Confluent.Kafka)</Description>
+    <PackageReleaseNotes>Kafka客户端，包含生产者和消费者；(依赖于Confluent.Kafka）</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="1.2.2" />
+  </ItemGroup>
+
+</Project>

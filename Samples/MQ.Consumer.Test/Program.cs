@@ -14,7 +14,7 @@ namespace MQ.Consumer.Test
                 HostName = "localhost",
                 Password = "guest",
                 Port = 5672,
-                TAG = "NIO_",
+                TAG = "YNIO_",
                 UserName = "guest",
                 VirtualHost = "/"
             });

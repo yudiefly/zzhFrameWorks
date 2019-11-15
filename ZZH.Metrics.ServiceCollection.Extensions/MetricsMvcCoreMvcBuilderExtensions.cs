@@ -12,9 +12,9 @@ namespace ZZH.Metrics.ServiceCollection.Extensions
     public static class MetricsMvcCoreMvcBuilderExtensions
     {
         /// <summary>
-        /// Adds the nio mertrics.
+        /// Adds the ynios mertrics.
         /// </summary>
-        /// <returns>The nio mertrics.</returns>
+        /// <returns>The ynios mertrics.</returns>
         /// <param name="builder">Builder.</param>
         public static IMvcBuilder AddZzhMertrics(this IMvcBuilder builder)
         {

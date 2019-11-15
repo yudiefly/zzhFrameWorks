@@ -25,7 +25,7 @@ namespace MQ.Test.Controllers
                 Password = "guest",
                 UserName = "guest",
                 Port = 5672,
-                TAG = "NIO_",
+                TAG = "YNIO_",
                 VirtualHost = "/"
             };
             //您的业务队列名列表（框架自动添加前缀）
@@ -49,7 +49,7 @@ namespace MQ.Test.Controllers
                 Introduce = "test:100",
                 Level = "",
                 PhoneNumber = "15900507061",
-                ServiceDeptName = "NIO",
+                ServiceDeptName = "YNIO",
                 Speciality = ""
             };
             producter.Publish("DOCTORINFO_QUEUE", doctor);
