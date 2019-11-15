@@ -53,9 +53,9 @@ namespace ZZH.ZipKinClient.Service.Test.Two.Controllers
             }
             else
             {
-                if (input.UserName == "yudiefly" || input.UserName == "NIO" || input.UserName == "zzh203" || input.UserName == "zhuzonghai")
+                if (input.UserName == "yudiefly" || input.UserName == "NIOS" || input.UserName == "zzh203" || input.UserName == "zhuzonghai")
                 {
-                    if (input.Password == "NIO" + DateTime.Now.ToString("MMddHH"))
+                    if (input.Password == "NIOS" + DateTime.Now.ToString("MMddHH"))
                     {
                         return new ResponseData<UserOutPut>
                         {
@@ -64,7 +64,7 @@ namespace ZZH.ZipKinClient.Service.Test.Two.Controllers
                             {
                                 LiveTime = DateTime.Now.AddHours(10).ToString("yyyy-MM-dd HH:mm:ss"),
                                 LoginTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                                Token = "NIO" + Guid.NewGuid().ToString().Replace("-", ""),
+                                Token = "NIOS" + Guid.NewGuid().ToString().Replace("-", ""),
                                 UserName = input.UserName
                             },
                             Messages = "Success"

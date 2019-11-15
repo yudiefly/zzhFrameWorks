@@ -5,7 +5,7 @@ using System.Text;
 namespace ZZH.Metrics.ServiceCollection.Extensions
 {
     /// <summary>
-    /// Nio metrics configuration.
+    /// YNios metrics configuration.
     /// </summary>
     public class MetricsConfiguration
     {
@@ -25,13 +25,13 @@ namespace ZZH.Metrics.ServiceCollection.Extensions
         /// <value>The server tag.</value>
         public string ServerTag { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="T:NIOCoreBase.Metrics.NioMetricsConfiguration"/>
+        /// Gets or sets a value indicating whether this <see cref="T:YNIOCoreBase.Metrics.NioMetricsConfiguration"/>
         /// reporting enabled.
         /// </summary>
         /// <value><c>true</c> if reporting enabled; otherwise, <c>false</c>.</value>
         public bool ReportingEnabled { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="T:NIOCoreBase.Metrics.NioMetricsConfiguration"/> is
+        /// Gets or sets a value indicating whether this <see cref="T:YNIOCoreBase.Metrics.NioMetricsConfiguration"/> is
         /// report to console.
         /// </summary>
         /// <value><c>true</c> if is report to console; otherwise, <c>false</c>.</value>

@@ -6,12 +6,12 @@ using System.Text;
 namespace ZZH.Metrics.ServiceCollection.Extensions
 {
     /// <summary>
-    /// Nio metrics application builder extensions.
+    /// YNios metrics application builder extensions.
     /// </summary>
     public static class MetricsApplicationBuilderExtensions
     {
         /// <summary>
-        /// Uses the nio metrics.
+        /// Uses the ynios metrics.
         /// </summary>
         /// <returns>The nio metrics.</returns>
         /// <param name="app">App.</param>
