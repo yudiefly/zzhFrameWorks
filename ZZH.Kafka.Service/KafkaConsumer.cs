@@ -6,19 +6,21 @@ using System.Threading;
 
 namespace ZZH.Kafka.Service
 {
-    public class KafkaConsumer<T>
+    public class KafkaConsumer<T> where T : class
     {
         #region 定义事件
         public class KafkaConsumerMessageArgs
         {
             public T Messages { set; get; }
             public ConsumeException KafkaCousmerExecption { set; get; }
-            public OperationCanceledException KafkaOperationCanceledException { set; get; }
-            public KafkaConsumerMessageArgs(T messages, ConsumeException kafkaConsumeException = null, OperationCanceledException kafkaOperationCanceledException = null)
+            public Exception sysExceptions { set; get; }
+            public string ExceptionOfMessages { set; get; }
+            public KafkaConsumerMessageArgs(T messages, string _ExceptionMessages_ = null, ConsumeException kafkaConsumeException = null, Exception sysExceptions = null)
             {
                 this.Messages = messages;
+                this.ExceptionOfMessages = _ExceptionMessages_;
                 this.KafkaCousmerExecption = KafkaCousmerExecption;
-                this.KafkaOperationCanceledException = kafkaOperationCanceledException;
+                this.sysExceptions = sysExceptions;
             }
         }
         public delegate void KafkaConsumerHandle(KafkaConsumerMessageArgs e);
@@ -36,32 +38,34 @@ namespace ZZH.Kafka.Service
         /// 消费者出错事件
         /// </summary>
         public event KafkaConsumerHandle KakfaConsumerException;
-        private KafkaConsumerMessageArgs onKakfaConsumerException(ConsumeException _exception_)
+        private KafkaConsumerMessageArgs onKakfaConsumerException(ConsumeException _exception_, string _exception_messages_ = "")
         {
-            var e = new KafkaConsumerMessageArgs(default(T), _exception_, null);
+            var e = new KafkaConsumerMessageArgs(default(T), _exception_messages_, _exception_, null);
             KakfaConsumerException?.Invoke(e);
             return e;
         }
         /// <summary>
         /// 操作出错或取消事件
         /// </summary>
-        public event KafkaConsumerHandle KafkaOperationCanceledExcepiton;
-        private KafkaConsumerMessageArgs onKafkaOperationCanceledExcepiton(OperationCanceledException _opreationCanceledException_)
+        public event KafkaConsumerHandle KafkaSystemExcepiton;
+        private KafkaConsumerMessageArgs onKafkaSystemExcepiton(Exception _exception_, string _exception_messages_ = "")
         {
-            var e = new KafkaConsumerMessageArgs(default(T), null, _opreationCanceledException_);
-            KafkaOperationCanceledExcepiton?.Invoke(e);
+            var e = new KafkaConsumerMessageArgs(default(T), "", null, _exception_);
+            KafkaSystemExcepiton?.Invoke(e);
             return e;
         }
         #endregion
 
         private List<string> Topics = new List<string>();
         private ConsumerConfig consumerConfig;
+        private IConsumer<string, T> consumer;
         /// <summary>
         /// 初始化
         /// 如果有用户名和密码,请放在KafkaConsumerConfig的ClientConfig属性中
         /// </summary>
         /// <param name="_config"></param>
-        public KafkaConsumer(KafkaConsumerConfig _config_)
+        /// <param name="_deserializer_">自定义序列化器</param>
+        public KafkaConsumer(KafkaConsumerConfig _config_, IDeserializer<T> _deserializer_ = null)
         {
             this.Topics = _config_.Topics;
             if (_config_.ClientConfig.Count > 0)
@@ -90,12 +94,18 @@ namespace ZZH.Kafka.Service
                 consumerConfig.StatisticsIntervalMs = _config_.StatisticsIntervalMs;
             }
             #endregion
+            var consumerBuilder = new ConsumerBuilder<string, T>(consumerConfig);
+            if (_deserializer_ != null)
+            {
+                consumer = consumerBuilder.SetValueDeserializer(_deserializer_).Build();
+            }
+            consumer = consumerBuilder.Build();
         }
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="_config_">服务器、Topic、用户名和密码</param>
-        public KafkaConsumer(KafkaConsumerConfigForCredit _config_)
+        public KafkaConsumer(KafkaConsumerConfigForCredit _config_, IDeserializer<T> _deserializer_ = null)
         {
             this.Topics = _config_.Topics;
             consumerConfig = new ConsumerConfig
@@ -112,6 +122,12 @@ namespace ZZH.Kafka.Service
                 AutoOffsetReset = _config_.AutoOffsetReset,
                 EnablePartitionEof = _config_.EnablePartitionEof
             };
+            var consumerBuilder = new ConsumerBuilder<string, T>(consumerConfig);
+            if (_deserializer_ != null)
+            {
+                consumer = consumerBuilder.SetValueDeserializer(_deserializer_).Build();
+            }
+            consumer = consumerBuilder.Build();
         }
 
         /// <summary>
@@ -120,7 +136,7 @@ namespace ZZH.Kafka.Service
         /// </summary>
         /// <param name="Topics">Topics List</param>
         /// <param name="clientConfig">通常只需要设置：clientConfig的BootstrapServers、SaslUsername、SaslPassword属性即可</param>
-        public KafkaConsumer(KafkaClientConfig clientConfig, List<string> Topics)
+        public KafkaConsumer(KafkaClientConfig clientConfig, List<string> Topics, IDeserializer<T> _deserializer_ = null)
         {
             this.Topics = Topics;
             consumerConfig = new ConsumerConfig(new ClientConfig
@@ -189,45 +205,40 @@ namespace ZZH.Kafka.Service
                 TopicMetadataRefreshIntervalMs = clientConfig.TopicMetadataRefreshIntervalMs
                 #endregion
             });
+            var consumerBuilder = new ConsumerBuilder<string, T>(consumerConfig);
+            if (_deserializer_ != null)
+            {
+                consumer = consumerBuilder.SetValueDeserializer(_deserializer_).Build();
+            }
+            consumer = consumerBuilder.Build();
         }
         /// <summary>
         /// 开启消费者
         /// </summary>
-        public void Consume()
+        public void Consume(JsonDeserializer<T> deserializer = null)
         {
-            using (var consumer = new ConsumerBuilder<Ignore, T>(consumerConfig).Build())
+            consumer.Subscribe(this.Topics);
+            CancellationTokenSource cts = new CancellationTokenSource();
+            try
             {
-                consumer.Subscribe(this.Topics);
-                CancellationTokenSource cts = new CancellationTokenSource();
-                Console.CancelKeyPress += (_, e) =>
+                while (true)
                 {
-                    e.Cancel = true; // prevent the process from terminating.
-                    cts.Cancel();
-                };
-                try
-                {
-                    while (true)
+                    try
                     {
-                        try
-                        {
-                            var cr = consumer.Consume(cts.Token);
-                            onOnMessage(cr.Value);
-                        }
-                        catch (ConsumeException e)
-                        {
-                            onKakfaConsumerException(e);
-                        }
-
+                        var cr = consumer.Consume(cts.Token);
+                        onOnMessage(cr.Value);
+                    }
+                    catch (ConsumeException e)
+                    {
+                        onKakfaConsumerException(e, e.Message);
                     }
                 }
-                catch (OperationCanceledException opException)
-                {
-                    consumer.Close();
-                    onKafkaOperationCanceledExcepiton(opException);
-                }
-
+            }
+            catch (Exception opException)
+            {
+                consumer.Close();
+                onKafkaSystemExcepiton(opException, opException.Message);
             }
         }
-
     }
 }

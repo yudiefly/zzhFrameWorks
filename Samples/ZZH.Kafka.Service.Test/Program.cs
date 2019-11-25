@@ -45,11 +45,15 @@ namespace ZZH.Kafka.Service.Test
                 Topics = new System.Collections.Generic.List<string>() { "yudiefly-home-app" } 
             });
             consumer.OnMessage += Consumer_OnMessage;
-            consumer.KakfaConsumerException += Consumer_OnKakfaConsumerException;
-            consumer.KafkaOperationCanceledExcepiton += Consumer_OnKafkaOperationCanceledExcepiton;
+            consumer.KakfaConsumerException += Consumer_KakfaConsumerException;
             consumer.Consume();
 
             Console.ReadLine();
+        }
+
+        private static void Consumer_KakfaConsumerException(KafkaConsumer<string>.KafkaConsumerMessageArgs e)
+        {
+            Console.WriteLine($"failed to get message: {e.ExceptionOfMessages} [{e.KafkaCousmerExecption.StackTrace}]");
         }
 
         private static void Producer_KakfaProducerSucces(KafkaProducer<string>.KafkaProducerArgs e)
@@ -57,11 +61,7 @@ namespace ZZH.Kafka.Service.Test
             Console.WriteLine($"Success to deliver message: {e.Key} [{e.Messages}]");
         }
 
-        private static void Consumer_OnKafkaOperationCanceledExcepiton(KafkaConsumer<string>.KafkaConsumerMessageArgs e)
-        {
-            Console.WriteLine($"failed to deliver message: {e.KafkaOperationCanceledException.Message} [{e.KafkaOperationCanceledException.StackTrace}]");
-        }
-
+   
         private static void Consumer_OnKakfaConsumerException(KafkaConsumer<string>.KafkaConsumerMessageArgs e)
         {
             Console.WriteLine($"failed to deliver message: {e.KafkaCousmerExecption.Message} [{e.KafkaCousmerExecption.Error.Code}]");

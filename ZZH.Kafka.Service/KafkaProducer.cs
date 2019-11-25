@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZZH.Kafka.Service
 {
-    public class KafkaProducer<T>
+    public class KafkaProducer<T> where T : class
     {
         #region 自定义事件 
         public class KafkaProducerArgs
@@ -47,11 +47,12 @@ namespace ZZH.Kafka.Service
         private string TopicName = "";
         private ProducerConfig producerConfig;
         private IProducer<string, T> _producer;
+
         /// <summary>
         /// 普通初始化
         /// </summary>
         /// <param name="_config">如果有用户名和密码,请放在KafkaConsumerConfig的ClientConfig属性中</param>
-        public KafkaProducer(KafkaProducerConfig _config_)
+        public KafkaProducer(KafkaProducerConfig _config_, ISerializer<T> serializer = null)
         {
             this.TopicName = _config_.TopicName;
             if (_config_.ClientConfig?.Count > 0)
@@ -62,13 +63,18 @@ namespace ZZH.Kafka.Service
             {
                 producerConfig = new ProducerConfig { BootstrapServers = _config_.BrokerServers };
             }
-            _producer = new ProducerBuilder<string, T>(producerConfig).Build();
+            var producerBuilder = new ProducerBuilder<string, T>(producerConfig);
+            if (serializer != null)
+            {
+                _producer = producerBuilder.SetValueSerializer(serializer).Build();
+            }
+            _producer = producerBuilder.Build();
         }
         /// <summary>
         /// 初始化
         /// </summary>
         /// <param name="_config_">服务器、Topic、用户名和密码</param>
-        public KafkaProducer(KafkaProducerConfigForCredit _config_)
+        public KafkaProducer(KafkaProducerConfigForCredit _config_, ISerializer<T> serializer = null)
         {
             this.TopicName = _config_.TopicName;
             producerConfig = new ProducerConfig
@@ -79,14 +85,19 @@ namespace ZZH.Kafka.Service
                 SaslMechanism = _config_.SaslMechanism,
                 SecurityProtocol = _config_.SecurityProtocol
             };
-            _producer = new ProducerBuilder<string, T>(producerConfig).Build();
+            var producerBuilder = new ProducerBuilder<string, T>(producerConfig);
+            if (serializer != null)
+            {
+                producerBuilder = producerBuilder.SetValueSerializer(serializer);
+            }
+            _producer = producerBuilder.Build();
         }
         /// <summary>
         ///  高级初始化的方法
         /// </summary>
         /// <param name="clientConfig">通常只需要设置：clientConfig的BootstrapServers、SaslUsername、SaslPassword、SaslMechanism、SecurityProtocol等属性即可</param>
         /// <param name="TopicName"></param>
-        public KafkaProducer(KafkaClientConfig clientConfig, string TopicName)
+        public KafkaProducer(KafkaClientConfig clientConfig, string TopicName, ISerializer<T> serializer = null)
         {
             this.TopicName = TopicName;
             producerConfig = new ProducerConfig
@@ -155,7 +166,12 @@ namespace ZZH.Kafka.Service
                 TopicMetadataRefreshIntervalMs = clientConfig.TopicMetadataRefreshIntervalMs
                 #endregion
             };
-            _producer = new ProducerBuilder<string, T>(producerConfig).Build();
+            var producerBuilder = new ProducerBuilder<string, T>(producerConfig);
+            if (serializer != null)
+            {
+                producerBuilder = producerBuilder.SetValueSerializer(serializer);
+            }
+            _producer = producerBuilder.Build();
         }
         /// <summary>
         /// 生产者发布消息
