@@ -1,9 +1,12 @@
 ﻿using MongoDB.Driver;
+using MongoDB.Driver.GridFS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.IO;
+using MongoDB.Bson;
 
 namespace ZZH.MongoDB.Service
 {
@@ -11,6 +14,10 @@ namespace ZZH.MongoDB.Service
                where TAggregate : AggregateBase
     {
         #region 初始化及字段属性设置
+        /// <summary>
+        /// MongoDB数据库
+        /// </summary>
+        private IMongoDatabase MongoDatabase = null;
         /// <summary>
         /// 获取集合
         /// </summary>
@@ -23,6 +30,7 @@ namespace ZZH.MongoDB.Service
         /// <param name="mongoConfig">MongoDB服务器配置类</param>
         public DoMongoRepostory(string dbSelectionKey, string collectionName, MongoConfig mongoConfig)
         {
+            this.MongoDatabase = ShareMongoDb(dbSelectionKey, mongoConfig);
             this.Collection = ShareMongoDb(dbSelectionKey, mongoConfig).GetCollection<TAggregate>(collectionName);
         }
         /// <summary>
@@ -32,8 +40,9 @@ namespace ZZH.MongoDB.Service
         /// <param name="dbName">数据库名</param>
         /// <param name="collectionName">表名</param>
         /// <param name="mongoConnectionStrings">连接字符串</param>
-        public DoMongoRepostory(string dbSelectionKey,string dbName, string collectionName, string mongoConnectionStrings)
+        public DoMongoRepostory(string dbSelectionKey, string dbName, string collectionName, string mongoConnectionStrings)
         {
+            this.MongoDatabase = ShareMongoDb(dbSelectionKey, mongoConnectionStrings, dbName);
             this.Collection = ShareMongoDb(dbSelectionKey, mongoConnectionStrings, dbName).GetCollection<TAggregate>(collectionName);
         }
 
@@ -501,7 +510,44 @@ namespace ZZH.MongoDB.Service
             return (int)count;
         }
 
-        #endregion 
+        #endregion
+
+        #region GridFS
+        /// <summary>
+        /// 上传一个文件
+        /// </summary>
+        /// <param name="filePath">文件名（包含路径）</param>
+        /// <param name="collectionName">集合名字(数据库表名)</param>
+        /// <returns>返回一个ObjectId（字符串）</returns>
+        public string UploadFile(string filePath, string collectionName)
+        {
+            if (File.Exists(filePath))
+            {
+                var fi = new FileInfo(filePath);
+                FileStream fileStream = new FileStream(filePath, FileMode.Open);
+                var bucket = new GridFSBucket(this.MongoDatabase, new GridFSBucketOptions
+                {
+                    BucketName = collectionName,
+                    ChunkSizeBytes = 358400,
+                    WriteConcern = WriteConcern.WMajority,
+                    ReadPreference = ReadPreference.Secondary
+                });
+                var options = new GridFSUploadOptions
+                {
+                    ChunkSizeBytes = 358400,
+                    Metadata = new BsonDocument { { "type", fi.Extension }, { "name", fi.Name }, { "copyright", true } }
+                };
+                var fieldid = bucket.UploadFromStream(fi.Name, fileStream, options);
+                fileStream.Close();
+                return fieldid.ToString();
+            }
+            else
+            {
+                return "error";
+            }
+        }
+
+        #endregion
 
     }
 }
