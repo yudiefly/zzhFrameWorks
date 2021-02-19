@@ -3,12 +3,15 @@
   <PropertyGroup>
     <!--<TargetFramework>netcoreapp2.0</TargetFramework>-->
     <TargetFrameworks>net452;net46;netstandard2.0;</TargetFrameworks>
-    <Version>1.1.2</Version>
+    <Version>1.2.0</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>增加使用MongoDB连接字符串的方式来连接Mongo服务器；
-增加多个.net框架下的支持；</Description>
-    <PackageReleaseNotes>增加多个.net框架下的支持；</PackageReleaseNotes>
+增加多个.net框架下的支持；
+增加对GridFS的支持；</Description>
+    <PackageReleaseNotes>增加使用MongoDB连接字符串的方式来连接Mongo服务器；
+增加多个.net框架下的支持；
+增加对GridFS的支持；</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

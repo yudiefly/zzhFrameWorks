@@ -519,7 +519,7 @@ namespace ZZH.MongoDB.Service
         /// <param name="filePath">文件名（包含路径）</param>
         /// <param name="collectionName">集合名字(数据库表名)</param>
         /// <returns>返回一个ObjectId（字符串）</returns>
-        public string UploadFile(string filePath, string collectionName)
+        public string UploadFile(string filePath, string collectionName, string desc = "")
         {
             if (File.Exists(filePath))
             {
@@ -535,7 +535,7 @@ namespace ZZH.MongoDB.Service
                 var options = new GridFSUploadOptions
                 {
                     ChunkSizeBytes = 358400,
-                    Metadata = new BsonDocument { { "type", fi.Extension }, { "name", fi.Name }, { "copyright", true } }
+                    Metadata = new BsonDocument { { "type", fi.Extension }, { "name", fi.Name }, { "copyright", true }, { "desc", desc } }
                 };
                 var fieldid = bucket.UploadFromStream(fi.Name, fileStream, options);
                 fileStream.Close();
@@ -547,7 +547,87 @@ namespace ZZH.MongoDB.Service
             }
         }
 
-
+        /// <summary>
+        /// 根据ObjectId下载一个文件
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <param name="objectid"></param>
+        /// <param name="collectionName"></param>
+        public void DownLoadFile(string filepath, string objectid, string collectionName)
+        {
+            FileStream fileStream = new FileStream(filepath, FileMode.Append);
+            var bucket = new GridFSBucket(this.MongoDatabase, new GridFSBucketOptions
+            {
+                BucketName = collectionName,
+                ChunkSizeBytes = 358400,
+                WriteConcern = WriteConcern.WMajority,
+                ReadPreference = ReadPreference.Secondary
+            });
+            var fileid = new ObjectId(objectid);
+            bucket.DownloadToStream(fileid, fileStream);
+            fileStream.Close();
+        }
+        /// <summary>
+        /// 根据文件名下载文件
+        /// </summary>
+        /// <param name="filepath">保存文件的完整路径</param>
+        /// <param name="fileName">文件名（不含扩展名）</param>
+        /// <param name="collectionName">mongodb集合名</param>
+        public void DownLoadFileByName(string filepath, string fileName, string collectionName)
+        {
+            FileStream fileStream = new FileStream(filepath, FileMode.Append);
+            var bucket = new GridFSBucket(this.MongoDatabase, new GridFSBucketOptions
+            {
+                BucketName = collectionName,
+                ChunkSizeBytes = 358400,
+                WriteConcern = WriteConcern.WMajority,
+                ReadPreference = ReadPreference.Secondary
+            });
+            var options = new GridFSDownloadByNameOptions
+            {
+                Revision = 0
+            };
+            bucket.DownloadToStreamByName(fileName, fileStream, options);
+            fileStream.Close();
+        }
+        /// <summary>
+        /// 根据文件扩展名称查询GridFS中的文档
+        /// </summary>
+        /// <param name="ExtensionName"></param>
+        /// <param name="collectionName"></param>
+        /// <returns></returns>
+        public List<GridFSFileInfo> QueryGridFSByExtension(string ExtensionName, string collectionName)
+        {
+            var bucket = new GridFSBucket(this.MongoDatabase, new GridFSBucketOptions
+            {
+                BucketName = collectionName,
+                ChunkSizeBytes = 358400,
+                WriteConcern = WriteConcern.WMajority,
+                ReadPreference = ReadPreference.Secondary
+            });
+            var filter = Builders<GridFSFileInfo>.Filter.Eq("metadata.type", ExtensionName);
+            var gridfsList = bucket.Find(filter).ToList();
+            return gridfsList;
+        }
+        /// <summary>
+        /// 根据文件名称查询GridFS中的文档
+        /// </summary>
+        /// <param name="FileName"></param>
+        /// <param name="collectionName"></param>
+        /// <returns></returns>
+        public List<GridFSFileInfo> QueryGridFSByFileName(string FileName, string collectionName)
+        {
+            var bucket = new GridFSBucket(this.MongoDatabase, new GridFSBucketOptions
+            {
+                BucketName = collectionName,
+                ChunkSizeBytes = 358400,
+                WriteConcern = WriteConcern.WMajority,
+                ReadPreference = ReadPreference.Secondary
+            });
+            var filter = Builders<GridFSFileInfo>.Filter.Eq("metadata.name", FileName);
+            var gridfsList = bucket.Find(filter).ToList();
+            return gridfsList;
+        }
         #endregion
 
     }
