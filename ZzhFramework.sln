@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29215.179
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZZH.MongoDB.Service", "ZZH.MongoDB.Service\ZZH.MongoDB.Service.csproj", "{B5DEBAF9-0268-4105-857D-E98DE73A481A}"
 EndProject
@@ -91,7 +91,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrainInterfaces", "Samples\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grains", "Samples\ExperimentalPark\OrleansDemo\Grains\Grains.csproj", "{7E75C5B0-A149-4614-8399-EAF3169E42F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientWebMvcApp", "Samples\ExperimentalPark\OrleansDemo\ClientWebMvcApp\ClientWebMvcApp.csproj", "{6C24050B-4B20-4F72-8B8A-FB36B75DC999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientWebMvcApp", "Samples\ExperimentalPark\OrleansDemo\ClientWebMvcApp\ClientWebMvcApp.csproj", "{6C24050B-4B20-4F72-8B8A-FB36B75DC999}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileUploadDemos", "FileUploadDemos", "{99CB894C-F23B-4A35-A8E7-294F6FB4E040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadNet48Demo", "Samples\ExperimentalPark\FileUploadNet48Demo\FileUploadNet48Demo.csproj", "{CDF518EF-90F4-4B35-8B58-2731B12F1A11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -251,6 +255,10 @@ Global
 		{6C24050B-4B20-4F72-8B8A-FB36B75DC999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C24050B-4B20-4F72-8B8A-FB36B75DC999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C24050B-4B20-4F72-8B8A-FB36B75DC999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF518EF-90F4-4B35-8B58-2731B12F1A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF518EF-90F4-4B35-8B58-2731B12F1A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF518EF-90F4-4B35-8B58-2731B12F1A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF518EF-90F4-4B35-8B58-2731B12F1A11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -285,6 +293,8 @@ Global
 		{2D2DCB2C-6C5F-47D6-BDAB-1AFAF620DEC2} = {3790C3E5-B0EC-4582-9134-28610A32BC8E}
 		{7E75C5B0-A149-4614-8399-EAF3169E42F3} = {3790C3E5-B0EC-4582-9134-28610A32BC8E}
 		{6C24050B-4B20-4F72-8B8A-FB36B75DC999} = {3790C3E5-B0EC-4582-9134-28610A32BC8E}
+		{99CB894C-F23B-4A35-A8E7-294F6FB4E040} = {C08BEA4E-7CDA-4CD3-9C69-FF9D9D615CA8}
+		{CDF518EF-90F4-4B35-8B58-2731B12F1A11} = {99CB894C-F23B-4A35-A8E7-294F6FB4E040}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD581FF0-5A50-4AEE-8BEE-A802C6503939}
