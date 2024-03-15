@@ -1,0 +1,6 @@
+@FileUploadForNet7_HostAddress = http://localhost:5205
+
+GET {{FileUploadForNet7_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
